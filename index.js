@@ -15,7 +15,7 @@ function handleSubmit() {
   var nameNode = document.getElementById('name');
   var descriptionNode = document.getElementById('description');
   var ingredientNodes = document.getElementsByName('ingredients');
-  
+
   recipe.name = nameNode.value;
   recipe.description = descriptionNode.value;
   recipe.ingredients = [];
@@ -23,7 +23,7 @@ function handleSubmit() {
   for(var i = 0 ; i < ingredientNodes.length ; i++) {
     recipe.ingredients.push(ingredientNodes[i].value);
   }
-  
+
   var recipeTemplate = document.getElementById("recipe-template").innerHTML;
   var recipeTemplateFn = Handlebars.compile(recipeTemplate);
   document.getElementById('main').innerHTML = recipeTemplateFn(recipe);
